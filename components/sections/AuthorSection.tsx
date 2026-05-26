@@ -12,7 +12,7 @@ export function AuthorSection() {
       className="relative"
       style={{ background: 'var(--color-bg-alt)' }}
     >
-      <div className="w-full h-[1px] bg-[#CC0000]/30" />
+      <div className="w-full h-[1px] bg-red/30" />
 
       <div className="max-w-5xl mx-auto px-4 py-14 md:py-28">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
@@ -27,7 +27,7 @@ export function AuthorSection() {
             <div
               role="img"
               aria-label="Foto de MrSaizen (em breve)"
-              className="relative w-full max-w-[280px] md:max-w-xs aspect-square border border-[#CC0000]/30 overflow-hidden mx-auto md:mx-0 bg-bg-alt"
+              className="relative w-full max-w-[280px] md:max-w-xs aspect-square border border-red/30 overflow-hidden mx-auto md:mx-0 bg-bg-alt"
             >
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
                 <div className="w-20 h-20 border-2 border-gray-dark rounded-full flex items-center justify-center">
@@ -43,20 +43,20 @@ export function AuthorSection() {
                 </span>
               </div>
 
-              <div className="absolute top-2 left-2 w-5 h-5 border-t-2 border-l-2 border-[#CC0000]/60" aria-hidden="true" />
-              <div className="absolute top-2 right-2 w-5 h-5 border-t-2 border-r-2 border-[#CC0000]/60" aria-hidden="true" />
-              <div className="absolute bottom-2 left-2 w-5 h-5 border-b-2 border-l-2 border-[#CC0000]/60" aria-hidden="true" />
-              <div className="absolute bottom-2 right-2 w-5 h-5 border-b-2 border-r-2 border-[#CC0000]/60" aria-hidden="true" />
+              <div className="absolute top-2 left-2 w-5 h-5 border-t-2 border-l-2 border-red/60" aria-hidden="true" />
+              <div className="absolute top-2 right-2 w-5 h-5 border-t-2 border-r-2 border-red/60" aria-hidden="true" />
+              <div className="absolute bottom-2 left-2 w-5 h-5 border-b-2 border-l-2 border-red/60" aria-hidden="true" />
+              <div className="absolute bottom-2 right-2 w-5 h-5 border-b-2 border-r-2 border-red/60" aria-hidden="true" />
             </div>
 
             <div
-              className="border-2 border-[#CC0000]/60 px-5 py-3 text-center"
+              className="border-2 border-red/60 px-5 py-3 text-center"
               style={{
                 transform: 'rotate(-2deg)',
                 boxShadow: '0 0 0 1px rgba(204,0,0,0.2), inset 0 0 0 2px rgba(204,0,0,0.1)',
               }}
             >
-              <div className="border-t border-b border-[#CC0000]/40 py-2">
+              <div className="border-t border-b border-red/40 py-2">
                 <p className="font-mono text-[9px] tracking-[0.3em] text-red uppercase whitespace-pre-line leading-loose">
                   {author.badgeText}
                 </p>
@@ -98,7 +98,7 @@ export function AuthorSection() {
         </div>
       </div>
 
-      <div className="w-full h-[1px] bg-[#CC0000]/30" />
+      <div className="w-full h-[1px] bg-red/30" />
     </section>
   )
 }

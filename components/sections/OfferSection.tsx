@@ -161,12 +161,12 @@ export function OfferSection() {
           </h3>
 
           <div>
-            {offer.faq.map((item) => (
+            {offer.faq.map((item, i) => (
               <FaqItem
                 key={item.question}
                 question={item.question}
                 answer={item.answer}
-                index={offer.faq.indexOf(item)}
+                index={i}
               />
             ))}
           </div>

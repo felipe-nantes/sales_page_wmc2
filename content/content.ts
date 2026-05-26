@@ -131,5 +131,6 @@ export const content = {
         answer: 'Essa crença é exatamente o que o curso combate. Prescrição sem eixo lógico é colagem. O WMC2 resolve isso.',
       },
     ],
+    faqHeading: 'PERGUNTAS FREQUENTES',
   },
 }

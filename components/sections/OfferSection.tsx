@@ -6,6 +6,8 @@ import { content } from '@/content/content'
 
 function FaqItem({ question, answer, index }: { question: string; answer: string; index: number }) {
   const [open, setOpen] = useState(false)
+  const btnId = `faq-btn-${index}`
+  const panelId = `faq-panel-${index}`
 
   return (
     <motion.div
@@ -16,9 +18,11 @@ function FaqItem({ question, answer, index }: { question: string; answer: string
       transition={{ delay: index * 0.06, duration: 0.35 }}
     >
       <button
+        id={btnId}
+        aria-controls={panelId}
+        aria-expanded={open}
         className="w-full flex items-start justify-between gap-4 py-4 text-left group min-h-[44px]"
         onClick={() => setOpen(!open)}
-        aria-expanded={open}
       >
         <span className="font-mono text-sm text-[#ccc] group-hover:text-white transition-colors leading-snug">
           <span className="text-red mr-2 font-bold">{open ? '▾' : '▸'}</span>
@@ -28,10 +32,13 @@ function FaqItem({ question, answer, index }: { question: string; answer: string
       <AnimatePresence initial={false}>
         {open && (
           <motion.div
+            id={panelId}
+            role="region"
+            aria-labelledby={btnId}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: 'easeOut' as const }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
             className="overflow-hidden"
           >
             <p className="font-mono text-sm text-gray pb-4 pl-5 leading-relaxed border-l-2 border-red/30 ml-[6px]">
@@ -49,7 +56,7 @@ export function OfferSection() {
 
   return (
     <section
-      aria-label="Oferta e checkout"
+      aria-label="Oferta"
       className="relative noise-overlay"
       style={{ background: 'var(--color-bg)' }}
     >
@@ -69,10 +76,7 @@ export function OfferSection() {
 
         <motion.h2
           className="font-impact text-white uppercase mb-10 whitespace-pre-line leading-[1.05]"
-          style={{
-            fontFamily: 'Anton, Impact, sans-serif',
-            fontSize: 'clamp(2rem, 6vw, 4rem)',
-          }}
+          style={{ fontSize: 'clamp(2rem, 6vw, 4rem)' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -97,10 +101,7 @@ export function OfferSection() {
             </p>
             <p
               className="font-impact text-red leading-none"
-              style={{
-                fontFamily: 'Anton, Impact, sans-serif',
-                fontSize: 'clamp(3rem, 10vw, 6rem)',
-              }}
+              style={{ fontSize: 'clamp(3rem, 10vw, 6rem)' }}
             >
               {offer.price}
             </p>
@@ -108,7 +109,7 @@ export function OfferSection() {
         </motion.div>
 
         <motion.div
-          className="mb-4 w-full"
+          className="mb-4"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -127,7 +128,7 @@ export function OfferSection() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
+          transition={{ duration: 0.4, delay: 0.4 }}
         >
           {offer.accessNote}
         </motion.p>
@@ -155,24 +156,24 @@ export function OfferSection() {
         <div className="text-left">
           <h3 className="font-mono text-xs tracking-[0.3em] text-[#444] uppercase mb-6 flex items-center gap-3">
             <span className="flex-1 h-px bg-[#1e1e1e]" />
-            PERGUNTAS FREQUENTES
+            {offer.faqHeading}
             <span className="flex-1 h-px bg-[#1e1e1e]" />
           </h3>
 
           <div>
-            {offer.faq.map((item, i) => (
+            {offer.faq.map((item) => (
               <FaqItem
-                key={`faq-${i}`}
+                key={item.question}
                 question={item.question}
                 answer={item.answer}
-                index={i}
+                index={offer.faq.indexOf(item)}
               />
             ))}
           </div>
         </div>
 
         <motion.div
-          className="mt-14 md:mt-16 w-full"
+          className="mt-14 md:mt-16"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

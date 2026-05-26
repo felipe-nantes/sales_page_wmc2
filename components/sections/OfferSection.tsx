@@ -93,8 +93,7 @@ export function OfferSection() {
           transition={{ duration: 0.4, delay: 0.2 }}
         >
           <div
-            className="inline-block border border-red/40 px-8 md:px-10 py-6"
-            style={{ background: 'rgba(204,0,0,0.05)' }}
+            className="inline-block border border-red/40 px-8 md:px-10 py-6 bg-red/5"
           >
             <p className="font-mono text-xs text-red tracking-[0.3em] uppercase mb-2">
               {offer.priceLabel}

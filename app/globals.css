@@ -1,3 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Source+Code+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-bg: #0a0a0a;
+  --color-bg-alt: #111111;
+  --color-bg-light: #161616;
+  --color-red: #CC0000;
+  --color-red-dark: #990000;
+  --color-red-glow: rgba(204, 0, 0, 0.4);
+  --color-white: #F0F0F0;
+  --color-gray: #888888;
+  --color-dark-gray: #333333;
+  --font-impact: 'Anton', Impact, sans-serif;
+  --font-mono: 'Source Code Pro', 'Courier New', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-white);
+  font-family: var(--font-mono);
+  overflow-x: hidden;
+}
+
+/* ── Noise texture overlay ── */
+.noise-overlay {
+  position: relative;
+}
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/noise.svg');
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.04;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  z-index: 1;
+}
+
+/* ── Halftone dot pattern ── */
+.halftone {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+
+.halftone-red {
+  background-image: radial-gradient(circle, rgba(204,0,0,0.12) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+/* ── Glitch keyframes ── */
+@keyframes glitch-main {
+  0%, 88%, 100% {
+    transform: translate(0, 0);
+    text-shadow: none;
+  }
+  89% {
+    transform: translate(-3px, 0);
+    text-shadow: 3px 0 0 rgba(204, 0, 0, 0.8);
+    clip-path: polygon(0 15%, 100% 15%, 100% 35%, 0 35%);
+  }
+  90% {
+    transform: translate(3px, 0);
+    text-shadow: -3px 0 0 rgba(255, 255, 255, 0.5);
+    clip-path: polygon(0 55%, 100% 55%, 100% 75%, 0 75%);
+  }
+  91% {
+    transform: translate(-2px, 1px);
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  }
+  92% {
+    transform: translate(0, 0);
+    clip-path: none;
+  }
+}
+
+@keyframes glitch-shadow {
+  0%, 88%, 100% { opacity: 0; }
+  89%, 91% { opacity: 1; transform: translate(4px, 0); }
+  90%, 92% { opacity: 0; }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes flicker {
+  0%, 97%, 100% { opacity: 1; }
+  98% { opacity: 0.85; }
+  99% { opacity: 1; }
+}
+
+@keyframes blink-cursor {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* ── Glitch text utility ── */
+.glitch-text {
+  position: relative;
+  animation: glitch-main 6s infinite;
+}
+.glitch-text::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: var(--color-red);
+  animation: glitch-shadow 6s infinite;
+  pointer-events: none;
+}
+
+/* ── Red glow utility ── */
+.red-glow {
+  box-shadow: 0 0 24px var(--color-red-glow), 0 0 48px rgba(204, 0, 0, 0.2);
+}
+
+/* ── Scanline overlay ── */
+.scanlines::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ── Video player ── */
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── FAQ accordion ── */
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+}
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}

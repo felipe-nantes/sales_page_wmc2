@@ -1,0 +1,5 @@
+export { HeroSection } from './HeroSection'
+export { ProblemSolutionSection } from './ProblemSolutionSection'
+export { CurriculumSection } from './CurriculumSection'
+export { AuthorSection } from './AuthorSection'
+export { OfferSection } from './OfferSection'

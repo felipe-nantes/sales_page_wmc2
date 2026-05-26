@@ -24,7 +24,7 @@ function FaqItem({ question, answer, index }: { question: string; answer: string
         className="w-full flex items-start justify-between gap-4 py-4 text-left group min-h-[44px]"
         onClick={() => setOpen(!open)}
       >
-        <span className="font-mono text-sm text-[#ccc] group-hover:text-white transition-colors leading-snug">
+        <span className="font-mono text-sm text-gray-light group-hover:text-white transition-colors leading-snug">
           <span className="text-red mr-2 font-bold">{open ? '▾' : '▸'}</span>
           {question}
         </span>

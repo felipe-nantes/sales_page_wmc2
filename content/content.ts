@@ -77,6 +77,22 @@ export const content = {
     ],
   },
 
+  socialProof: {
+    systemLabel: '// QUEM O SAIZEN TREINA',
+    headline: 'RESULTADO\nNÃO É COINCIDÊNCIA.',
+    sub: 'Alguns dos atletas que passaram pelo Método Saizen.',
+    athletes: [
+      { id: '01', name: '', achievement: '', photo: '' },
+      { id: '02', name: '', achievement: '', photo: '' },
+      { id: '03', name: '', achievement: '', photo: '' },
+      { id: '04', name: '', achievement: '', photo: '' },
+      { id: '05', name: '', achievement: '', photo: '' },
+      { id: '06', name: '', achievement: '', photo: '' },
+      { id: '07', name: '', achievement: '', photo: '' },
+      { id: '08', name: '', achievement: '', photo: '' },
+    ],
+  },
+
   author: {
     systemLabel: '// QUEM ESTÁ POR TRÁS',
     headline: 'TREINADOR DE VERDADE.\nNÃO PERSONAGEM FITNESS.',

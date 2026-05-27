@@ -38,3 +38,6 @@ next-env.d.ts
 # tooling
 .claude/
 .superpowers/
+
+# source references (not part of the deployable project)
+references/

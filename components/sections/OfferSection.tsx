@@ -1,7 +1,7 @@
 'use client'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
-import { SystemLabel, CtaButton } from '@/components/ui'
+import { SystemLabel, CtaButton, ErrorWindow } from '@/components/ui'
 import { content } from '@/content/content'
 
 function FaqItem({ question, answer, index }: { question: string; answer: string; index: number }) {
@@ -11,7 +11,7 @@ function FaqItem({ question, answer, index }: { question: string; answer: string
 
   return (
     <motion.div
-      className="border-b border-[#1e1e1e]"
+      className="border-b border-[#1e1e1e] bg-black/80"
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -57,12 +57,29 @@ export function OfferSection() {
   return (
     <section
       aria-label="Oferta"
-      className="relative noise-overlay"
-      style={{ background: 'var(--color-bg)' }}
+      className="relative overflow-hidden noise-overlay scanlines"
+      style={{ background: 'transparent' }}
     >
-      <div className="w-full h-[3px] bg-red" />
 
-      <div className="max-w-3xl mx-auto px-4 py-14 md:py-28 text-center">
+      {/* Halftone */}
+      <div className="absolute inset-0 halftone pointer-events-none opacity-50" />
+
+      {/* Error window stack */}
+      <div
+        className="absolute top-3 right-3 z-20"
+        aria-hidden="true"
+        style={{ transform: 'rotate(-1.5deg)' }}
+      >
+        <ErrorWindow
+          title="DEDSEC TAKEOVER"
+          message="ARE YOU SURE?"
+          variant="default"
+          size="sm"
+          className="w-36 md:w-44 opacity-80"
+        />
+      </div>
+
+      <div className="max-w-3xl mx-auto px-4 py-14 md:py-28 text-center relative z-10">
 
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -75,7 +92,7 @@ export function OfferSection() {
         </motion.div>
 
         <motion.h2
-          className="font-impact text-white uppercase mb-10 whitespace-pre-line leading-[1.05]"
+          className="font-impact text-white uppercase mb-10 whitespace-pre-line leading-[1.05] term-heading"
           style={{ fontSize: 'clamp(2rem, 6vw, 4rem)' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -84,28 +101,6 @@ export function OfferSection() {
         >
           {offer.headline}
         </motion.h2>
-
-        <motion.div
-          className="mb-10"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-        >
-          <div
-            className="inline-block border border-red/40 px-8 md:px-10 py-6 bg-red/5"
-          >
-            <p className="font-mono text-xs text-red tracking-[0.3em] uppercase mb-2">
-              {offer.priceLabel}
-            </p>
-            <p
-              className="font-impact text-red leading-none"
-              style={{ fontSize: 'clamp(3rem, 10vw, 6rem)' }}
-            >
-              {offer.price}
-            </p>
-          </div>
-        </motion.div>
 
         <motion.div
           className="mb-4"
@@ -123,7 +118,7 @@ export function OfferSection() {
         </motion.div>
 
         <motion.p
-          className="font-mono text-xs text-[#444] tracking-widest mb-14 md:mb-16"
+          className="font-mono text-xs text-[#444] tracking-widest mb-14 md:mb-16 term-copy"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -132,30 +127,13 @@ export function OfferSection() {
           {offer.accessNote}
         </motion.p>
 
-        <motion.div
-          className="border border-[#1e1e1e] p-5 md:p-6 mb-14 md:mb-16 text-left"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-        >
-          <div className="flex items-start gap-4">
-            <span className="text-red text-2xl leading-none mt-1 flex-shrink-0" aria-hidden="true">☑</span>
-            <div>
-              <p className="font-mono text-sm text-white mb-1 tracking-wide">
-                {offer.guarantee.headline}
-              </p>
-              <p className="font-mono text-sm text-gray">
-                {offer.guarantee.body}
-              </p>
-            </div>
-          </div>
-        </motion.div>
-
+        {/* FAQ */}
         <div className="text-left">
           <h3 className="font-mono text-xs tracking-[0.3em] text-[#444] uppercase mb-6 flex items-center gap-3">
             <span className="flex-1 h-px bg-[#1e1e1e]" />
+            <img src="/assets/middle-finger.png" alt="" aria-hidden="true" className="art-dedsec w-4 h-5 opacity-35" />
             {offer.faqHeading}
+            <img src="/assets/skull-pixel.png" alt="" aria-hidden="true" className="art-dedsec w-4 h-4 opacity-30" />
             <span className="flex-1 h-px bg-[#1e1e1e]" />
           </h3>
 
@@ -187,7 +165,6 @@ export function OfferSection() {
         </motion.div>
       </div>
 
-      <div className="w-full h-[2px] bg-red/40" />
     </section>
   )
 }

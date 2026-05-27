@@ -12,7 +12,6 @@ export const content = {
     ],
     cta: {
       label: 'ENTRAR NO PROTOCOLO',
-      price: '— R$247',
       sub: 'Lançamento 05/06 · Acesso pelo grupo',
       href: KIWIFY_URL,
     },
@@ -98,8 +97,6 @@ export const content = {
   offer: {
     systemLabel: '// ACESSO AO PROTOCOLO',
     headline: 'WMC2 — WEAPONS OF\nMASS CONSTRUCTION 2',
-    price: 'R$ 247',
-    priceLabel: 'Pré-lançamento · Lançamento 05/06',
     cta: {
       label: 'ENTRAR NO PROTOCOLO →',
       href: KIWIFY_URL,

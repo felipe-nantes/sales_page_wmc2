@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
-import { SystemLabel } from '@/components/ui'
+import { SystemLabel, ErrorWindow } from '@/components/ui'
 import { content } from '@/content/content'
 
 export function AuthorSection() {
@@ -9,12 +9,29 @@ export function AuthorSection() {
   return (
     <section
       aria-label="Sobre o autor"
-      className="relative"
-      style={{ background: 'var(--color-bg-alt)' }}
+      className="relative overflow-hidden scanlines"
+      style={{ background: 'transparent' }}
     >
-      <div className="w-full h-[1px] bg-red/30" />
 
-      <div className="max-w-5xl mx-auto px-4 py-14 md:py-28">
+      {/* Halftone */}
+      <div className="absolute inset-0 halftone pointer-events-none opacity-20" />
+
+      {/* Error window */}
+      <div
+        className="absolute top-3 right-3 z-20"
+        aria-hidden="true"
+        style={{ transform: 'rotate(1deg)' }}
+      >
+        <ErrorWindow
+          title="ACCESS GRANTED"
+          message="USER_01 — AUTENTICADO"
+          variant="granted"
+          size="sm"
+          className="w-36 md:w-48 opacity-80"
+        />
+      </div>
+
+      <div className="max-w-5xl mx-auto px-4 py-14 md:py-28 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
 
           <motion.div
@@ -24,31 +41,20 @@ export function AuthorSection() {
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5 }}
           >
-            <div
-              role="img"
-              aria-label="Foto de MrSaizen (em breve)"
-              className="relative w-full max-w-[280px] md:max-w-xs aspect-square border border-red/30 overflow-hidden mx-auto md:mx-0 bg-bg-alt"
-            >
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                <div className="w-20 h-20 border-2 border-gray-dark rounded-full flex items-center justify-center">
-                  <span
-                    className="text-gray-dark text-3xl"
-                    style={{ fontFamily: 'Anton, Impact, sans-serif' }}
-                  >
-                    S
-                  </span>
-                </div>
-                <span className="font-mono text-[10px] text-[#444] tracking-widest uppercase">
-                  foto · mr.saizen
-                </span>
-              </div>
-
-              <div className="absolute top-2 left-2 w-5 h-5 border-t-2 border-l-2 border-red/60" aria-hidden="true" />
-              <div className="absolute top-2 right-2 w-5 h-5 border-t-2 border-r-2 border-red/60" aria-hidden="true" />
-              <div className="absolute bottom-2 left-2 w-5 h-5 border-b-2 border-l-2 border-red/60" aria-hidden="true" />
-              <div className="absolute bottom-2 right-2 w-5 h-5 border-b-2 border-r-2 border-red/60" aria-hidden="true" />
+            {/* Photo */}
+            <div className="relative w-full max-w-[280px] md:max-w-xs aspect-square border border-red/30 overflow-hidden mx-auto md:mx-0">
+              <img
+                src="/assets/mrsaizen.png"
+                alt="MrSaizen"
+                className="w-full h-full object-cover object-top"
+              />
+              <div className="absolute top-2 left-2 w-5 h-5 border-t-2 border-l-2 border-red/60 z-20" aria-hidden="true" />
+              <div className="absolute top-2 right-2 w-5 h-5 border-t-2 border-r-2 border-red/60 z-20" aria-hidden="true" />
+              <div className="absolute bottom-2 left-2 w-5 h-5 border-b-2 border-l-2 border-red/60 z-20" aria-hidden="true" />
+              <div className="absolute bottom-2 right-2 w-5 h-5 border-b-2 border-r-2 border-red/60 z-20" aria-hidden="true" />
             </div>
 
+            {/* Badge */}
             <div
               className="border-2 border-red/60 px-5 py-3 text-center"
               style={{
@@ -73,10 +79,8 @@ export function AuthorSection() {
             <SystemLabel text={author.systemLabel} className="mb-5 md:mb-6 block" />
 
             <h2
-              className="font-impact text-white uppercase mb-6 md:mb-8 whitespace-pre-line leading-[1.05]"
-              style={{
-                fontSize: 'clamp(1.8rem, 6vw, 3.5rem)',
-              }}
+              className="font-impact text-white uppercase mb-6 md:mb-8 whitespace-pre-line leading-[1.05] term-heading"
+              style={{ fontSize: 'clamp(1.8rem, 6vw, 3.5rem)' }}
             >
               {author.headline}
             </h2>
@@ -88,7 +92,7 @@ export function AuthorSection() {
                 line === '' ? (
                   <div key={`line-${i}`} className="h-3" />
                 ) : (
-                  <p key={`line-${i}`} className="font-mono text-sm md:text-base text-[#aaa] leading-relaxed">
+                  <p key={`line-${i}`} className="font-mono text-sm md:text-base text-[#aaa] leading-relaxed term-copy">
                     {line}
                   </p>
                 )
@@ -98,7 +102,6 @@ export function AuthorSection() {
         </div>
       </div>
 
-      <div className="w-full h-[1px] bg-red/30" />
     </section>
   )
 }

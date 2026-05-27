@@ -1,6 +1,6 @@
 'use client'
 import { motion, type Variants } from 'framer-motion'
-import { SystemLabel } from '@/components/ui'
+import { SystemLabel, ErrorWindow } from '@/components/ui'
 import { content } from '@/content/content'
 
 const fadeUp: Variants = {
@@ -16,28 +16,34 @@ export function ProblemSolutionSection() {
   const { problem, solution } = content
 
   return (
-    <section className="relative" style={{ background: 'var(--color-bg-alt)' }}>
-      {/* Red line at top */}
-      <div className="w-full h-[3px] bg-[#CC0000] opacity-60" />
+    <section className="relative overflow-hidden scanlines" style={{ background: 'transparent' }}>
 
-      <div className="max-w-6xl mx-auto px-4 py-14 md:py-28">
+      {/* Error window */}
+      <div
+        className="absolute top-3 right-3 z-20"
+        aria-hidden="true"
+        style={{ transform: 'rotate(1.5deg)' }}
+      >
+        <ErrorWindow
+          title="SYSTEM WARNING.exe"
+          message="TAKEOVER IN PROGRESS..."
+          variant="warning"
+          size="sm"
+          className="w-36 md:w-44 opacity-80"
+        />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 py-14 md:py-28 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-px">
 
-          {/* ── PROBLEM BLOCK ── */}
+          {/* ── PROBLEM ── */}
           <motion.div
-            className="relative p-6 md:p-12 border-b md:border-b-0 md:border-r border-[#CC0000]/20"
+            className="relative p-6 md:p-12 border-b md:border-b-0 md:border-r border-red/20"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-80px' }}
           >
-            {/* Halftone-red background */}
-            <div
-              className="absolute inset-0 pointer-events-none opacity-30"
-              style={{
-                backgroundImage: 'radial-gradient(circle, rgba(204,0,0,0.08) 1px, transparent 1px)',
-                backgroundSize: '10px 10px',
-              }}
-            />
+            <div className="absolute inset-0 halftone-red pointer-events-none opacity-50" />
 
             <div className="relative z-10">
               <motion.div custom={0} variants={fadeUp} className="mb-5 md:mb-6">
@@ -47,7 +53,7 @@ export function ProblemSolutionSection() {
               <motion.h2
                 custom={1}
                 variants={fadeUp}
-                className="font-impact text-white uppercase mb-6 md:mb-8 whitespace-pre-line leading-[1.05]"
+                className="font-impact text-white uppercase mb-6 md:mb-8 whitespace-pre-line leading-[1.05] term-heading"
                 style={{
                   fontFamily: 'Anton, Impact, sans-serif',
                   fontSize: 'clamp(1.8rem, 6vw, 3.5rem)',
@@ -65,7 +71,7 @@ export function ProblemSolutionSection() {
                       key={i}
                       custom={i + 2}
                       variants={fadeUp}
-                      className="font-mono text-sm md:text-base text-[#aaa] leading-relaxed"
+                      className="font-mono text-sm md:text-base text-[#aaa] leading-relaxed term-copy"
                     >
                       {line}
                     </motion.p>
@@ -75,14 +81,16 @@ export function ProblemSolutionSection() {
             </div>
           </motion.div>
 
-          {/* ── SOLUTION BLOCK ── */}
+          {/* ── SOLUTION ── */}
           <motion.div
             className="relative p-6 md:p-12"
-            style={{ background: 'var(--color-bg-light)' }}
+            style={{ background: 'rgba(21,18,16,0.50)' }}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-80px' }}
           >
+            <div className="absolute inset-0 halftone pointer-events-none opacity-30" />
+
             <div className="relative z-10">
               <motion.div custom={0} variants={fadeUp} className="mb-5 md:mb-6">
                 <SystemLabel text={solution.systemLabel} />
@@ -91,7 +99,7 @@ export function ProblemSolutionSection() {
               <motion.h2
                 custom={1}
                 variants={fadeUp}
-                className="font-impact text-white uppercase mb-6 md:mb-8 whitespace-pre-line leading-[1.05]"
+                className="font-impact text-white uppercase mb-6 md:mb-8 whitespace-pre-line leading-[1.05] term-heading"
                 style={{
                   fontFamily: 'Anton, Impact, sans-serif',
                   fontSize: 'clamp(1.8rem, 6vw, 3.5rem)',
@@ -100,12 +108,7 @@ export function ProblemSolutionSection() {
                 {solution.headline}
               </motion.h2>
 
-              {/* Red accent line */}
-              <motion.div
-                custom={2}
-                variants={fadeUp}
-                className="w-12 h-[2px] bg-[#CC0000] mb-6 md:mb-8"
-              />
+              <motion.div custom={2} variants={fadeUp} className="w-12 h-[2px] bg-red mb-6 md:mb-8" />
 
               <div className="space-y-0">
                 {solution.lines.map((line, i) =>
@@ -116,7 +119,7 @@ export function ProblemSolutionSection() {
                       key={i}
                       custom={i + 3}
                       variants={fadeUp}
-                      className="font-mono text-sm md:text-base text-[#aaa] leading-relaxed"
+                      className="font-mono text-sm md:text-base text-[#aaa] leading-relaxed term-copy"
                     >
                       {line}
                     </motion.p>
@@ -125,17 +128,14 @@ export function ProblemSolutionSection() {
               </div>
             </div>
 
-            {/* Decorative corner bracket */}
             <div
-              className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-[#CC0000]/30 hidden md:block"
+              className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-red/30 hidden md:block"
               aria-hidden="true"
             />
           </motion.div>
         </div>
       </div>
 
-      {/* Bottom separator */}
-      <div className="w-full h-[1px] bg-[#CC0000]/30" />
     </section>
   )
 }

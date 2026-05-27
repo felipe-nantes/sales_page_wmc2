@@ -1,4 +1,6 @@
 export { HeroSection } from './HeroSection'
+export { VSLSection } from './VSLSection'
+export { HeroVSLScroll } from './HeroVSLScroll'
 export { ProblemSolutionSection } from './ProblemSolutionSection'
 export { CurriculumSection } from './CurriculumSection'
 export { AuthorSection } from './AuthorSection'

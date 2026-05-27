@@ -7,7 +7,7 @@ type Athlete = { id: string; name: string; achievement: string; photo: string }
 
 function AthleteSlot({ athlete }: { athlete: Athlete }) {
   return (
-    <div className="relative w-56 h-56 md:w-72 md:h-72 flex-shrink-0 mx-2 md:mx-3 border border-red/25 overflow-hidden bg-[#0e0c0a]">
+    <div className="relative w-52 h-80 md:w-64 md:h-[420px] flex-shrink-0 mx-2 md:mx-3 border border-red/25 overflow-hidden bg-[#0e0c0a]">
       {athlete.photo ? (
         <img
           src={athlete.photo}

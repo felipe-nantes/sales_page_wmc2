@@ -64,6 +64,57 @@ export function OfferSection() {
       {/* Halftone */}
       <div className="absolute inset-0 halftone pointer-events-none opacity-50" />
 
+      {/* ── Art layer ── */}
+      {/* Giant centered — skull */}
+      <motion.div
+        className="absolute inset-0 flex items-center justify-center pointer-events-none z-[3]"
+        aria-hidden="true"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.09 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 1.2 }}
+      >
+        <img src="/assets/skull.png" alt="" className="art-dedsec w-[60vw] max-w-[520px]" />
+      </motion.div>
+
+      {/* Bleed right — mummy fists */}
+      <motion.div
+        className="absolute top-0 right-0 bottom-0 flex items-center justify-end pointer-events-none z-[3]"
+        aria-hidden="true"
+        style={{ transform: 'translateX(32%)' }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.20 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 1 }}
+      >
+        <img src="/assets/mummy-fists.png" alt="" className="art-dedsec h-[65vh]" />
+      </motion.div>
+
+      {/* Bleed left — reaper invertido */}
+      <motion.div
+        className="absolute top-0 left-0 bottom-0 flex items-center pointer-events-none z-[3]"
+        aria-hidden="true"
+        style={{ transform: 'translateX(-35%) scaleX(-1)' }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.16 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 1 }}
+      >
+        <img src="/assets/reaper2.png" alt="" className="art-dedsec h-[70vh]" />
+      </motion.div>
+
+      {/* Anchor — hand-point próximo ao CTA */}
+      <motion.div
+        className="absolute bottom-[28%] right-[6%] pointer-events-none z-[3] hidden md:block"
+        aria-hidden="true"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.40 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+      >
+        <img src="/assets/hand-point.png" alt="" className="art-dedsec w-20" style={{ transform: 'rotate(-15deg)' }} />
+      </motion.div>
+
       {/* Error window stack */}
       <div
         className="absolute top-3 right-3 z-20"

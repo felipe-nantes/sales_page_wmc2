@@ -62,6 +62,44 @@ export function SocialProofSection() {
     >
       <div className="absolute inset-0 halftone pointer-events-none opacity-30" />
 
+      {/* ── Art layer ── */}
+      {/* Giant centered — skull */}
+      <motion.div
+        className="absolute inset-0 flex items-center justify-center pointer-events-none z-[3]"
+        aria-hidden="true"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.07 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 1.2 }}
+      >
+        <img src="/assets/skull-02.png" alt="" className="art-dedsec w-[50vw] max-w-[440px]" />
+      </motion.div>
+
+      {/* Bleed left — screamer */}
+      <motion.div
+        className="absolute top-0 left-0 bottom-0 flex items-center pointer-events-none z-[3]"
+        aria-hidden="true"
+        style={{ transform: 'translateX(-42%)' }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.20 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 1 }}
+      >
+        <img src="/assets/screamer2.png" alt="" className="art-dedsec h-[60vh]" />
+      </motion.div>
+
+      {/* Anchor — lightning canto superior direito */}
+      <motion.div
+        className="absolute top-8 right-8 pointer-events-none z-[3] hidden md:block"
+        aria-hidden="true"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.32 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <img src="/assets/lightning.png" alt="" className="art-dedsec w-12" style={{ transform: 'rotate(8deg)' }} />
+      </motion.div>
+
       <div
         className="absolute top-3 right-3 z-20"
         aria-hidden="true"

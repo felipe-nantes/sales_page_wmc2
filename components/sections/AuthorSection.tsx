@@ -16,6 +16,44 @@ export function AuthorSection() {
       {/* Halftone */}
       <div className="absolute inset-0 halftone pointer-events-none opacity-20" />
 
+      {/* ── Art layer ── */}
+      {/* Giant centered — mummy */}
+      <motion.div
+        className="absolute inset-0 flex items-center justify-center pointer-events-none z-[3]"
+        aria-hidden="true"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.08 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 1.2 }}
+      >
+        <img src="/assets/mummy.png" alt="" className="art-dedsec h-[75vh]" />
+      </motion.div>
+
+      {/* Bleed right — skeleton */}
+      <motion.div
+        className="absolute top-0 right-0 bottom-0 flex items-center pointer-events-none z-[3]"
+        aria-hidden="true"
+        style={{ transform: 'translateX(38%)' }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.22 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 1 }}
+      >
+        <img src="/assets/skeleton2.png" alt="" className="art-dedsec h-[65vh]" />
+      </motion.div>
+
+      {/* Anchor — reaper-icon próximo à foto */}
+      <motion.div
+        className="absolute top-1/2 left-[4%] -translate-y-1/2 pointer-events-none z-[3] hidden md:block"
+        aria-hidden="true"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.26 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+      >
+        <img src="/assets/reaper-icon.png" alt="" className="art-dedsec w-16" style={{ transform: 'rotate(-6deg)' }} />
+      </motion.div>
+
       {/* Error window */}
       <div
         className="absolute top-3 right-3 z-20"

@@ -38,6 +38,44 @@ export function CurriculumSection() {
         />
       </div>
 
+      {/* ── Art layer ── */}
+      {/* Giant centered — reaper */}
+      <motion.div
+        className="absolute inset-0 flex items-center justify-center pointer-events-none z-[3]"
+        aria-hidden="true"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.09 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 1.2 }}
+      >
+        <img src="/assets/reaper2.png" alt="" className="art-dedsec h-[75vh]" />
+      </motion.div>
+
+      {/* Bleed right — skeleton */}
+      <motion.div
+        className="absolute top-0 right-0 bottom-0 flex items-center pointer-events-none z-[3]"
+        aria-hidden="true"
+        style={{ transform: 'translateX(42%)' }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.22 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 1 }}
+      >
+        <img src="/assets/skeleton4.png" alt="" className="art-dedsec h-[65vh]" />
+      </motion.div>
+
+      {/* Anchor — lightning canto inferior esquerdo */}
+      <motion.div
+        className="absolute bottom-8 left-8 pointer-events-none z-[3] hidden md:block"
+        aria-hidden="true"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.30 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <img src="/assets/lightning.png" alt="" className="art-dedsec w-10" style={{ transform: 'rotate(10deg)' }} />
+      </motion.div>
+
       <div className="max-w-6xl mx-auto px-4 py-14 md:py-28 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
 

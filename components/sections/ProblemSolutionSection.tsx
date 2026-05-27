@@ -33,6 +33,44 @@ export function ProblemSolutionSection() {
         />
       </div>
 
+      {/* ── Art layer ── */}
+      {/* Giant centered — skull */}
+      <motion.div
+        className="absolute inset-0 flex items-center justify-center pointer-events-none z-[3]"
+        aria-hidden="true"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.08 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 1.2 }}
+      >
+        <img src="/assets/skull.png" alt="" className="art-dedsec w-[55vw] max-w-[480px]" />
+      </motion.div>
+
+      {/* Bleed left — reaper */}
+      <motion.div
+        className="absolute top-0 left-0 bottom-0 flex items-end pointer-events-none z-[3]"
+        aria-hidden="true"
+        style={{ transform: 'translateX(-42%)' }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.22 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 1 }}
+      >
+        <img src="/assets/reaper3.png" alt="" className="art-dedsec h-[70vh]" />
+      </motion.div>
+
+      {/* Anchor — poison, canto superior direito */}
+      <motion.div
+        className="absolute top-6 right-6 pointer-events-none z-[3] hidden md:block"
+        aria-hidden="true"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.28 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <img src="/assets/poison.png" alt="" className="art-dedsec w-12" style={{ transform: 'rotate(-8deg)' }} />
+      </motion.div>
+
       <div className="max-w-6xl mx-auto px-4 py-14 md:py-28 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-px">
 

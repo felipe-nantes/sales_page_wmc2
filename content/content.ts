@@ -86,7 +86,6 @@ export const content = {
       { id: '02', name: '', achievement: '', photo: '/assets/atletas/prova_social4.png' },
       { id: '03', name: '', achievement: '', photo: '/assets/atletas/prova_social5.png' },
       { id: '04', name: '', achievement: '', photo: '/assets/atletas/prova_social6.png' },
-      { id: '05', name: '', achievement: '', photo: '/assets/atletas/stuart-10.png' },
       { id: '06', name: '', achievement: '', photo: '/assets/atletas/prova_12.1.png' },
       { id: '07', name: '', achievement: '', photo: '/assets/atletas/prova_12.2.png' },
       { id: '08', name: '', achievement: '', photo: '/assets/atletas/prova_12.3.png' },

@@ -1,4 +1,4 @@
-export const KIWIFY_URL = 'KIWIFY_URL_AQUI' // substituir antes do deploy
+export const KIWIFY_URL = process.env.NEXT_PUBLIC_KIWIFY_URL ?? '#'
 
 export const content = {
   hero: {

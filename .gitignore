@@ -45,3 +45,6 @@ references/
 # design/planning docs
 *.md
 docs/
+
+# private assets — video content not for public distribution
+public/assets/vsl.mp4

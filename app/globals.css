@@ -223,6 +223,18 @@ video {
   padding: 0.3em 0.65em;
 }
 
+/* ── Infinite marquee ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 36s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
   .glitch-text {
@@ -230,5 +242,8 @@ video {
   }
   .glitch-text::before {
     display: none;
+  }
+  .marquee-track {
+    animation: none;
   }
 }

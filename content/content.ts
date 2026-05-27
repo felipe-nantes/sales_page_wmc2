@@ -90,7 +90,6 @@ export const content = {
       { id: '07', name: '', achievement: '', photo: '/assets/atletas/prova_12.2.png' },
       { id: '08', name: '', achievement: '', photo: '/assets/atletas/prova_12.3.png' },
       { id: '09', name: '', achievement: '', photo: '/assets/atletas/prova_12.4.png' },
-      { id: '10', name: '', achievement: '', photo: '/assets/atletas/provasocial-13.png' },
       { id: '11', name: '', achievement: '', photo: '/assets/atletas/provasocial-14.png' },
       { id: '12', name: '', achievement: '', photo: '/assets/atletas/moraes-7.png' },
       { id: '13', name: '', achievement: '', photo: '/assets/atletas/dudu-11.png' },

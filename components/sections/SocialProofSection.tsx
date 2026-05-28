@@ -68,7 +68,7 @@ export function SocialProofSection() {
         className="absolute inset-0 flex items-center justify-center pointer-events-none z-[3]"
         aria-hidden="true"
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.07 }}
+        whileInView={{ opacity: 0.20 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 1.2 }}
       >
@@ -81,7 +81,7 @@ export function SocialProofSection() {
         aria-hidden="true"
         style={{ transform: 'translateX(-42%)' }}
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.20 }}
+        whileInView={{ opacity: 0.45 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 1 }}
       >
@@ -93,7 +93,7 @@ export function SocialProofSection() {
         className="absolute top-8 right-8 pointer-events-none z-[3] hidden md:block"
         aria-hidden="true"
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.32 }}
+        whileInView={{ opacity: 0.62 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >

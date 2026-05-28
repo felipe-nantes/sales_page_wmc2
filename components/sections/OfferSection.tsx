@@ -70,7 +70,7 @@ export function OfferSection() {
         className="absolute inset-0 flex items-center justify-center pointer-events-none z-[3]"
         aria-hidden="true"
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.09 }}
+        whileInView={{ opacity: 0.22 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 1.2 }}
       >
@@ -83,7 +83,7 @@ export function OfferSection() {
         aria-hidden="true"
         style={{ transform: 'translateX(32%)' }}
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.20 }}
+        whileInView={{ opacity: 0.45 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 1 }}
       >
@@ -96,7 +96,7 @@ export function OfferSection() {
         aria-hidden="true"
         style={{ transform: 'translateX(-35%) scaleX(-1)' }}
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.16 }}
+        whileInView={{ opacity: 0.40 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 1 }}
       >
@@ -108,7 +108,7 @@ export function OfferSection() {
         className="absolute bottom-[28%] right-[6%] pointer-events-none z-[3] hidden md:block"
         aria-hidden="true"
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.40 }}
+        whileInView={{ opacity: 0.65 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >

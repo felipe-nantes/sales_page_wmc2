@@ -44,7 +44,7 @@ export function CurriculumSection() {
         className="absolute inset-0 flex items-center justify-center pointer-events-none z-[3]"
         aria-hidden="true"
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.09 }}
+        whileInView={{ opacity: 0.22 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 1.2 }}
       >
@@ -57,7 +57,7 @@ export function CurriculumSection() {
         aria-hidden="true"
         style={{ transform: 'translateX(42%)' }}
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.22 }}
+        whileInView={{ opacity: 0.48 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 1 }}
       >
@@ -69,7 +69,7 @@ export function CurriculumSection() {
         className="absolute bottom-8 left-8 pointer-events-none z-[3] hidden md:block"
         aria-hidden="true"
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.30 }}
+        whileInView={{ opacity: 0.62 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >

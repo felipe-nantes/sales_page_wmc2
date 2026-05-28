@@ -22,7 +22,7 @@ export function AuthorSection() {
         className="absolute inset-0 flex items-center justify-center pointer-events-none z-[3]"
         aria-hidden="true"
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.08 }}
+        whileInView={{ opacity: 0.22 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 1.2 }}
       >
@@ -35,7 +35,7 @@ export function AuthorSection() {
         aria-hidden="true"
         style={{ transform: 'translateX(38%)' }}
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.22 }}
+        whileInView={{ opacity: 0.48 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 1 }}
       >
@@ -47,7 +47,7 @@ export function AuthorSection() {
         className="absolute top-1/2 left-[4%] -translate-y-1/2 pointer-events-none z-[3] hidden md:block"
         aria-hidden="true"
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.26 }}
+        whileInView={{ opacity: 0.58 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >

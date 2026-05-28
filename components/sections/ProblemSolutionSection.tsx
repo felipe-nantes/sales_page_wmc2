@@ -39,7 +39,7 @@ export function ProblemSolutionSection() {
         className="absolute inset-0 flex items-center justify-center pointer-events-none z-[3]"
         aria-hidden="true"
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.08 }}
+        whileInView={{ opacity: 0.22 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 1.2 }}
       >
@@ -52,7 +52,7 @@ export function ProblemSolutionSection() {
         aria-hidden="true"
         style={{ transform: 'translateX(-42%)' }}
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.22 }}
+        whileInView={{ opacity: 0.48 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 1 }}
       >
@@ -64,7 +64,7 @@ export function ProblemSolutionSection() {
         className="absolute top-6 right-6 pointer-events-none z-[3] hidden md:block"
         aria-hidden="true"
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.28 }}
+        whileInView={{ opacity: 0.60 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >

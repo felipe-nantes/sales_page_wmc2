@@ -33,7 +33,7 @@ export function AuthorSection() {
       <motion.div
         className="absolute top-0 right-0 bottom-0 flex items-center pointer-events-none z-[3]"
         aria-hidden="true"
-        style={{ transform: 'translateX(38%)' }}
+        style={{ transform: 'translateX(20%)' }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.48 }}
         viewport={{ once: true, margin: '-80px' }}
@@ -42,9 +42,9 @@ export function AuthorSection() {
         <img src="/assets/skeleton2.png" alt="" className="art-dedsec h-[65vh]" />
       </motion.div>
 
-      {/* Anchor — reaper-icon próximo à foto */}
+      {/* Anchor — reaper-icon próximo ao heading */}
       <motion.div
-        className="absolute top-1/2 left-[4%] -translate-y-1/2 pointer-events-none z-[3] hidden md:block"
+        className="absolute top-[8%] left-[5%] pointer-events-none z-[11] hidden md:block"
         aria-hidden="true"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.58 }}

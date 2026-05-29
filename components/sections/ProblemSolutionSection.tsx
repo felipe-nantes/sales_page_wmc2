@@ -50,7 +50,7 @@ export function ProblemSolutionSection() {
       <motion.div
         className="absolute top-0 left-0 bottom-0 flex items-end pointer-events-none z-[3]"
         aria-hidden="true"
-        style={{ transform: 'translateX(-42%)' }}
+        style={{ transform: 'translateX(-24%)' }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.48 }}
         viewport={{ once: true, margin: '-80px' }}
@@ -59,9 +59,9 @@ export function ProblemSolutionSection() {
         <img src="/assets/reaper3.png" alt="" className="art-dedsec h-[70vh]" />
       </motion.div>
 
-      {/* Anchor — poison, canto superior direito */}
+      {/* Anchor — poison, junto ao headline da Solution */}
       <motion.div
-        className="absolute top-6 right-6 pointer-events-none z-[3] hidden md:block"
+        className="absolute top-[30%] right-[6%] pointer-events-none z-[11] hidden md:block"
         aria-hidden="true"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.60 }}

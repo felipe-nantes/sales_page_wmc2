@@ -81,7 +81,7 @@ export function OfferSection() {
       <motion.div
         className="absolute top-0 right-0 bottom-0 flex items-center justify-end pointer-events-none z-[3]"
         aria-hidden="true"
-        style={{ transform: 'translateX(32%)' }}
+        style={{ transform: 'translateX(14%)' }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.45 }}
         viewport={{ once: true, margin: '-80px' }}
@@ -94,7 +94,7 @@ export function OfferSection() {
       <motion.div
         className="absolute top-0 left-0 bottom-0 flex items-center pointer-events-none z-[3]"
         aria-hidden="true"
-        style={{ transform: 'translateX(-35%) scaleX(-1)' }}
+        style={{ transform: 'translateX(-18%) scaleX(-1)' }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.40 }}
         viewport={{ once: true, margin: '-80px' }}
@@ -103,16 +103,16 @@ export function OfferSection() {
         <img src="/assets/reaper2.png" alt="" className="art-dedsec h-[70vh]" />
       </motion.div>
 
-      {/* Anchor — hand-point próximo ao CTA */}
+      {/* Anchor — hand-point apontando para o CTA */}
       <motion.div
-        className="absolute bottom-[28%] right-[6%] pointer-events-none z-[3] hidden md:block"
+        className="absolute bottom-[40%] right-[6%] pointer-events-none z-[11] hidden md:block"
         aria-hidden="true"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.65 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
-        <img src="/assets/hand-point.png" alt="" className="art-dedsec w-20" style={{ transform: 'rotate(-15deg)' }} />
+        <img src="/assets/hand-point.png" alt="" className="art-dedsec w-20" style={{ transform: 'rotate(-25deg)' }} />
       </motion.div>
 
       {/* Error window stack */}

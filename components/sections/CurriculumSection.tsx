@@ -55,7 +55,7 @@ export function CurriculumSection() {
       <motion.div
         className="absolute top-0 right-0 bottom-0 flex items-center pointer-events-none z-[3]"
         aria-hidden="true"
-        style={{ transform: 'translateX(42%)' }}
+        style={{ transform: 'translateX(24%)' }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.48 }}
         viewport={{ once: true, margin: '-80px' }}
@@ -64,9 +64,9 @@ export function CurriculumSection() {
         <img src="/assets/skeleton4.png" alt="" className="art-dedsec h-[65vh]" />
       </motion.div>
 
-      {/* Anchor — lightning canto inferior esquerdo */}
+      {/* Anchor — lightning junto ao SystemLabel */}
       <motion.div
-        className="absolute bottom-8 left-8 pointer-events-none z-[3] hidden md:block"
+        className="absolute top-[10%] left-[6%] pointer-events-none z-[11] hidden md:block"
         aria-hidden="true"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.62 }}

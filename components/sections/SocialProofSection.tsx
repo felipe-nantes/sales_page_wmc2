@@ -79,7 +79,7 @@ export function SocialProofSection() {
       <motion.div
         className="absolute top-0 left-0 bottom-0 flex items-center pointer-events-none z-[3]"
         aria-hidden="true"
-        style={{ transform: 'translateX(-42%)' }}
+        style={{ transform: 'translateX(-22%)' }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.45 }}
         viewport={{ once: true, margin: '-80px' }}
@@ -88,9 +88,9 @@ export function SocialProofSection() {
         <img src="/assets/screamer2.png" alt="" className="art-dedsec h-[60vh]" />
       </motion.div>
 
-      {/* Anchor — lightning canto superior direito */}
+      {/* Anchor — lightning junto ao headline */}
       <motion.div
-        className="absolute top-8 right-8 pointer-events-none z-[3] hidden md:block"
+        className="absolute top-[15%] right-[4%] pointer-events-none z-[11] hidden md:block"
         aria-hidden="true"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.62 }}
